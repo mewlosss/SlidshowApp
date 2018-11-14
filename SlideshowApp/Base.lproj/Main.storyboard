@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,143 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CK7-Hd-j10">
+                                <rect key="frame" x="0.0" y="20" width="375" height="336"/>
+                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="336" id="bN4-BP-Neb"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qv4-ql-2uz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="336"/>
+                                <connections>
+                                    <action selector="kakudaibutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lPi-DK-rHV"/>
+                                    <segue destination="o3E-RM-ESh" kind="show" id="di4-hx-n1L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKB-F1-7cL">
+                                <rect key="frame" x="162" y="376" width="51" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9ct-OV-DAi"/>
+                                    <constraint firstAttribute="width" constant="51" id="drn-21-HWY"/>
+                                </constraints>
+                                <state key="normal" image="再生">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UFo-Ax-YGF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCI-5w-VNr">
+                                <rect key="frame" x="221" y="376" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Pf4-R1-OIX"/>
+                                    <constraint firstAttribute="height" constant="50" id="eWt-QB-pQc"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="→画像"/>
+                                <connections>
+                                    <action selector="upcountbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oel-sL-Da3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKm-kY-o1h">
+                                <rect key="frame" x="104" y="376" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6JL-bB-oNR"/>
+                                    <constraint firstAttribute="width" constant="50" id="k4i-YC-FYc"/>
+                                </constraints>
+                                <state key="normal" image="←画像"/>
+                                <connections>
+                                    <action selector="downcountbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MRW-Mo-2ju"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WCI-5w-VNr" firstAttribute="centerY" secondItem="WKm-kY-o1h" secondAttribute="centerY" id="1Wp-Ft-cVf"/>
+                            <constraint firstItem="BKB-F1-7cL" firstAttribute="top" secondItem="CK7-Hd-j10" secondAttribute="bottom" constant="20" id="2w1-c2-4F4"/>
+                            <constraint firstItem="BKB-F1-7cL" firstAttribute="top" secondItem="WKm-kY-o1h" secondAttribute="top" id="4CA-an-D9k"/>
+                            <constraint firstItem="BKB-F1-7cL" firstAttribute="leading" secondItem="WKm-kY-o1h" secondAttribute="trailing" constant="8" id="C4M-QO-WbN"/>
+                            <constraint firstItem="CK7-Hd-j10" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FQB-pK-tNr"/>
+                            <constraint firstItem="CK7-Hd-j10" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="G8S-Gv-fmz"/>
+                            <constraint firstItem="BKB-F1-7cL" firstAttribute="centerY" secondItem="WKm-kY-o1h" secondAttribute="centerY" id="Gmi-lb-nYM"/>
+                            <constraint firstItem="WCI-5w-VNr" firstAttribute="leading" secondItem="BKB-F1-7cL" secondAttribute="trailing" constant="8" id="JIK-xt-N8M"/>
+                            <constraint firstItem="WCI-5w-VNr" firstAttribute="height" secondItem="WKm-kY-o1h" secondAttribute="height" id="QY5-4d-L9H"/>
+                            <constraint firstItem="CK7-Hd-j10" firstAttribute="top" secondItem="qv4-ql-2uz" secondAttribute="top" id="Rke-hN-10l"/>
+                            <constraint firstItem="WCI-5w-VNr" firstAttribute="top" secondItem="WKm-kY-o1h" secondAttribute="top" id="Tmk-jy-DYI"/>
+                            <constraint firstItem="BKB-F1-7cL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wjb-cp-ybb"/>
+                            <constraint firstItem="qv4-ql-2uz" firstAttribute="bottom" secondItem="CK7-Hd-j10" secondAttribute="bottom" id="abz-97-pk8"/>
+                            <constraint firstItem="CK7-Hd-j10" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fdd-46-bn9"/>
+                            <constraint firstItem="qv4-ql-2uz" firstAttribute="trailing" secondItem="CK7-Hd-j10" secondAttribute="trailing" id="h5e-Yd-wrk"/>
+                            <constraint firstItem="BKB-F1-7cL" firstAttribute="height" secondItem="WKm-kY-o1h" secondAttribute="height" id="uNc-E5-eSC"/>
+                            <constraint firstItem="CK7-Hd-j10" firstAttribute="leading" secondItem="qv4-ql-2uz" secondAttribute="leading" id="xvO-Bk-Xod"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="downcountbutton" destination="WKm-kY-o1h" id="lzo-2E-Shi"/>
+                        <outlet property="gazou" destination="CK7-Hd-j10" id="pNy-YW-Cye"/>
+                        <outlet property="startbutton" destination="BKB-F1-7cL" id="qSo-rB-KAT"/>
+                        <outlet property="upcountbutton" destination="WCI-5w-VNr" id="cGf-yW-5lw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Kakudai View Controller-->
+        <scene sceneID="WrG-QL-NPd">
+            <objects>
+                <viewController id="o3E-RM-ESh" customClass="kakudaiViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aUj-gM-9kj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2c-83-HFS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="BoL-gZ-YmB">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="nA0-Kz-kla">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="bI3-og-0E1"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2BB-ow-E0t">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2BB-ow-E0t" firstAttribute="top" secondItem="H2c-83-HFS" secondAttribute="bottom" id="0Dz-ok-zu6"/>
+                            <constraint firstItem="H2c-83-HFS" firstAttribute="top" secondItem="hNT-P0-tIy" secondAttribute="top" id="GRN-lq-p6r"/>
+                            <constraint firstItem="2BB-ow-E0t" firstAttribute="bottom" secondItem="hNT-P0-tIy" secondAttribute="bottom" id="a1h-fZ-WBb"/>
+                            <constraint firstItem="2BB-ow-E0t" firstAttribute="leading" secondItem="H2c-83-HFS" secondAttribute="leading" id="dHe-wd-hPx"/>
+                            <constraint firstItem="H2c-83-HFS" firstAttribute="leading" secondItem="aUj-gM-9kj" secondAttribute="leading" id="f8p-Ma-2Yb"/>
+                            <constraint firstAttribute="trailing" secondItem="H2c-83-HFS" secondAttribute="trailing" id="hny-Fa-VTp"/>
+                            <constraint firstItem="2BB-ow-E0t" firstAttribute="trailing" secondItem="H2c-83-HFS" secondAttribute="trailing" id="uTh-1K-fgs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hNT-P0-tIy"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageview" destination="2BB-ow-E0t" id="qEu-2K-ofi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N7c-z3-Tjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789.60000000000002" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="←画像" width="127" height="128"/>
+        <image name="→画像" width="127" height="128"/>
+        <image name="再生" width="256" height="256"/>
+    </resources>
 </document>
