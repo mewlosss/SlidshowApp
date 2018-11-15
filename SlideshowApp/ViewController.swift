@@ -47,13 +47,13 @@ class ViewController: UIViewController {
                 self.imagecount = self.imagecount + 1
 //                ２秒ごとにスライドショーにする
                 if (self.imagecount == 0){
-                    self.gazou.image = UIImage(named: "gazou0.jpg")
-                }else if (self.imagecount == 1){
                     self.gazou.image = UIImage(named: "gazou1.jpg")
-                }else if (self.imagecount == 2){
+                }else if (self.imagecount == 1){
                     self.gazou.image = UIImage(named: "gazou2.jpg")
-                }else if (self.imagecount == 3){
+                }else if (self.imagecount == 2){
                     self.gazou.image = UIImage(named: "gazou3.jpg")
+                }else if (self.imagecount == 3){
+                    self.gazou.image = UIImage(named: "gazou4.jpg")
                         self.imagecount = -1
                 }})
 //            ボタンを復活させる・タイマーの終了
@@ -82,17 +82,22 @@ class ViewController: UIViewController {
     }
     @IBAction func downcountbutton(_ sender: Any) {
 //        画像を戻す
-        imagecount = imagecount - 1
+        self.imagecount = self.imagecount - 1
      
         if (imagecount == 0) {
             self.gazou.image = UIImage(named: "gazou1.jpg")
-            imagecount = 4
         }else if (imagecount == 1){
             self.gazou.image = UIImage(named: "gazou2.jpg")
         }else if (imagecount == 2){
             self.gazou.image = UIImage(named: "gazou3.jpg")
         }else if (imagecount == 3){
             self.gazou.image = UIImage(named: "gazou4.jpg")
+        }else if (imagecount == -1){
+            self.gazou.image = UIImage(named: "gazou4.jpg")
+            imagecount = 3
+        }else if (imagecount == -2){
+            self.gazou.image = UIImage(named: "gazou4.jpg")
+            imagecount = 3
         }
     }
     @IBAction func kakudaibutton(_ sender: Any) {
