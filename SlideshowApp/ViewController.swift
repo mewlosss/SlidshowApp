@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     var count = 0
     var imagecount = 0
     var timer1 = Timer()
-    @IBOutlet weak var kakuninlabel: UILabel!
 
     
     override func viewDidLoad() {
@@ -27,6 +26,10 @@ class ViewController: UIViewController {
     }else if (imagecount == 2){
            gazou.image = UIImage(named: "gazou3.jpg")
         }else if (imagecount == 3){
+            gazou.image = UIImage(named: "gazou4.jpg")
+        }else if (imagecount == -1){
+            gazou.image = UIImage(named: "gazou4.jpg")
+        }else if (imagecount == -2){
             gazou.image = UIImage(named: "gazou4.jpg")
         }
     }
@@ -69,6 +72,7 @@ class ViewController: UIViewController {
     @IBAction func upcountbutton(_ sender: Any) {
 //        画像を進める
         self.imagecount = self.imagecount + 1
+        
         if (imagecount == 0) {
             gazou.image = UIImage(named: "gazou1.jpg")
         }else if (imagecount == 1){
@@ -82,7 +86,7 @@ class ViewController: UIViewController {
     }
     @IBAction func downcountbutton(_ sender: Any) {
 //        画像を戻す
-        self.imagecount = self.imagecount - 1
+        self.kakuninlabel.text = String(imagecount)
      
         if (imagecount == 0) {
             self.gazou.image = UIImage(named: "gazou1.jpg")

@@ -17,6 +17,10 @@ class kakudaiViewController: UIViewController {
             self.imageview.image = UIImage(named: "kakudaigazou3.jpg")
         }else if (upimage == 3){
                 self.imageview.image = UIImage(named: "kakudaigazou4.jpg")
+        }else if (upimage == -1){
+                self.imageview.image = UIImage(named: "kakudaigazou4.jpg")
+        }else if (upimage == -2){
+                self.imageview.image = UIImage(named: "kakudaigazou4.jpg")
         }
     }
         override func didReceiveMemoryWarning() {
