@@ -115,7 +115,7 @@
                                     <navigationItem id="BoL-gZ-YmB">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="nA0-Kz-kla">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="bI3-og-0E1"/>
+                                                <segue destination="Obv-ka-ddh" kind="unwind" unwindAction="unwind:" id="cLa-sG-bTv"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -143,6 +143,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7c-z3-Tjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Obv-ka-ddh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="789.60000000000002" y="133.5832083958021"/>
         </scene>

@@ -111,4 +111,7 @@ class ViewController: UIViewController {
         let gamenseni:kakudaiViewController = segue.destination as! kakudaiViewController
         gamenseni.upimage = imagecount
     }
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+    }
+    
 }
