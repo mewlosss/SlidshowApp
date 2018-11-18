@@ -93,7 +93,6 @@
                     <connections>
                         <outlet property="downcountbutton" destination="WKm-kY-o1h" id="lzo-2E-Shi"/>
                         <outlet property="gazou" destination="CK7-Hd-j10" id="pNy-YW-Cye"/>
-                        <outlet property="kakudaibutton" destination="qv4-ql-2uz" id="s75-RI-QvE"/>
                         <outlet property="startbutton" destination="BKB-F1-7cL" id="qSo-rB-KAT"/>
                         <outlet property="upcountbutton" destination="WCI-5w-VNr" id="cGf-yW-5lw"/>
                     </connections>

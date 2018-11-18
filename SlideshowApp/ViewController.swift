@@ -8,7 +8,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var startbutton: UIButton!
     @IBOutlet weak var downcountbutton: UIButton!
     @IBOutlet weak var upcountbutton: UIButton!
-    @IBOutlet weak var kakudaibutton: UIButton!
     
     var count = 0
     var imagecount = 0
@@ -43,8 +42,7 @@ class ViewController: UIViewController {
         count = count + 1
         upcountbutton.isEnabled = false
         downcountbutton.isEnabled = false
-        kakudaibutton.isEnabled = false
-        
+       
         if(count == 1){
 //            再生ボタンにする
             startbutton.setImage(image1, for: .normal)
@@ -68,7 +66,7 @@ class ViewController: UIViewController {
             self.count = 0
             upcountbutton.isEnabled = true
             downcountbutton.isEnabled = true
-            kakudaibutton.isEnabled = true
+            
         }
     }
     @IBAction func upcountbutton(_ sender: Any) {
@@ -107,6 +105,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func kakudaibutton(_ sender: Any) {
+            timer1.invalidate()
     }
 //    imagecountを画面繊維で渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
