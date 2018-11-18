@@ -86,8 +86,8 @@ class ViewController: UIViewController {
     }
     @IBAction func downcountbutton(_ sender: Any) {
 //        画像を戻す
-        self.kakuninlabel.text = String(imagecount)
-     
+        self.imagecount = self.imagecount - 1
+        
         if (imagecount == 0) {
             self.gazou.image = UIImage(named: "gazou1.jpg")
         }else if (imagecount == 1){
