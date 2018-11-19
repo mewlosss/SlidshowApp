@@ -105,7 +105,13 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func kakudaibutton(_ sender: Any) {
-            timer1.invalidate()
+        if (count == 1){
+            self.startbutton.setImage(image0, for: .normal)
+            self.timer1.invalidate()
+            self.count = 0
+            upcountbutton.isEnabled = true
+            downcountbutton.isEnabled = true
+        }
     }
 //    imagecountを画面繊維で渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
